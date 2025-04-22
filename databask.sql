@@ -30,25 +30,13 @@ CREATE TABLE  answers (
   FOREIGN KEY (student_id) REFERENCES students (student_id)
 );
 
-CREATE TABLE Results (
-    studentId   VARCHAR(4) PRIMARY KEY,
-    FName       VARCHAR(50) NOT NULL DEFAULT "?",
-    LName       VARCHAR(50) NOT NULL DEFAULT "?",
-    unitId      VARCHAR(4) NOT NULL DEFAULT "?" ,
-    score       DECIMAL(2,2) CHECK (score BETWEEN 0 AND 30) NOT NULL DEFAULT 0.00,
-    grade       CHAR(1) NOT NULL DEFAULT "?",
-    comment     VARCHAR(30) NOT NULL DEFAULT "?"
-);
-
 CREATE TABLE HISTORY (
-     HistoryId VARCHAR(4) PRIMARY KEY,
-    studentId   VARCHAR(4) NOT NULL DEFAULT "?",
+     HId VARCHAR(4) PRIMARY KEY,
+    SId   VARCHAR(4) NOT NULL DEFAULT "?",
     unitId      VARCHAR(4) NOT NULL DEFAULT "?" ,
     score       DECIMAL(2,2) CHECK (score BETWEEN 0 AND 30) NOT NULL DEFAULT 0.00,
-    grade       CHAR(1) NOT NULL DEFAULT "?",
-    NumberOfAttempts    INT  NOT NULL DEFAULT 0,
-    UnitStatus VARCHAR(20) NOT NULL DEFAULT "?" ,
-    ChangedAt DATETIME DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()
+    NoOfAttempts    INT  NOT NULL DEFAULT 0,
+     comment     VARCHAR(30) NOT NULL DEFAULT "?"
 );
 
 
