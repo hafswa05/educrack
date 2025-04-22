@@ -26,7 +26,7 @@ CREATE TABLE  answers (
   anweredAT datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (answer_id),
   KEY student_id (student_id),
-  CONSTRAINT `answers_ibfk_1` FOREIGN KEY (student_id) REFERENCES students (student_id)
+  FOREIGN KEY (student_id) REFERENCES students (student_id)
 ) 
 
 
