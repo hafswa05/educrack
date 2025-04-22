@@ -29,8 +29,10 @@ CREATE TABLE questions (
   optionC VARCHAR(255) NOT NULL,
   optionD VARCHAR(255) NOT NULL,
   correct_option CHAR(1) NOT NULL CHECK (correct_option IN ('A', 'B', 'C', 'D')),
+  lec_id INT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (course_id) REFERENCES courses(course_id)
+  FOREIGN KEY (course_id) REFERENCES courses(course_id),
+  Foreign key (lec_id) References lecturers(lec_id)
 );
 
 CREATE TABLE  answers (
