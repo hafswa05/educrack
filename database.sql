@@ -12,8 +12,10 @@ CREATE TABLE  students (
   email varchar(100) NOT NULL,
   password varchar(255) NOT NULL,
   course_Id varchar(5) DEFAULT NULL,
+  course_id varchar(4),
   PRIMARY KEY (student_id),
-  UNIQUE KEY email (email)
+  UNIQUE KEY email (email),
+  FOREIGN KEY (course_id) REFERENCES courses(course_id)
   );
 CREATE TABLE  answers (
   answer_id varchar(7) NOT NULL,
