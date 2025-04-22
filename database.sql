@@ -12,8 +12,7 @@ CREATE TABLE  students (
   email varchar(100) NOT NULL,
   password varchar(255) NOT NULL,
   question_id varchar(5) NOT NULL,
-  course_Id varchar(5) DEFAULT NULL,
-  course_id varchar(4) NOT NULL,
+  course_id varchar(5) DEFAULT NULL,
   PRIMARY KEY (student_id),
   UNIQUE KEY email (email),
   FOREIGN KEY (course_id) REFERENCES courses(course_id),
@@ -44,7 +43,8 @@ CREATE TABLE  answers (
   anweredAT datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (answer_id),
   KEY student_id (student_id),
-  FOREIGN KEY (student_id) REFERENCES students (student_id)
+  FOREIGN KEY (student_id) REFERENCES students (student_id),
+  FOREIGN KEY (question_id) REFERENCES questions (question_id)
 );
 
 CREATE TABLE Results (
