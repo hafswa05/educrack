@@ -11,12 +11,13 @@ CREATE TABLE  students (
   fullname varchar(100) NOT NULL,
   email varchar(100) NOT NULL,
   password varchar(255) NOT NULL,
+  question_id varchar(5) NOT NULL,
   course_Id varchar(5) DEFAULT NULL,
-  course_id varchar(4),
+  course_id varchar(4) NOT NULL,
   PRIMARY KEY (student_id),
   UNIQUE KEY email (email),
-  FOREIGN KEY (course_id) REFERENCES courses(course_id)
-  FOREIGN KEY (questionId) REFERENCES questions (question_Id)
+  FOREIGN KEY (course_id) REFERENCES courses(course_id),
+  FOREIGN KEY (question_id) REFERENCES questions (question_id)
   );
 
 CREATE TABLE questions (
