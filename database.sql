@@ -28,7 +28,7 @@ CREATE TABLE  answers (
   PRIMARY KEY (answer_id),
   KEY student_id (student_id),
   FOREIGN KEY (student_id) REFERENCES students (student_id)
-) 
+);
 
 CREATE TABLE Results (
     studentId   VARCHAR(4) PRIMARY KEY,
