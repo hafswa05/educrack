@@ -77,4 +77,31 @@ created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 
+CREATE TABLE IF NOT EXISTS courses (
+  course_id VARCHAR(6) NOT NULL PRIMARY KEY,
+  course_name VARCHAR(100) NOT NULL
+);
+
+
+INSERT IGNORE INTO courses (course_id, course_name) VALUES
+('C001', 'BICS'),
+('C002', 'BBA'),
+('C003', 'BBNA');
+
+CREATE TABLE IF NOT EXISTS units (
+  unit_id VARCHAR(6) NOT NULL PRIMARY KEY,
+  unit_name VARCHAR(100) NOT NULL,
+  course_id VARCHAR(6) NOT NULL,
+  FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+INSERT IGNORE INTO units (unit_id, unit_name, course_id) VALUES
+('U101', 'Communication Skills', 'C001'),
+('U102', 'Principles of Ethics', 'C001'),
+('U103', 'Communication Skills', 'C002'),
+('U104', 'Principles of Ethics', 'C002'),
+('U105', 'Communication Skills', 'C003'),
+('U106', 'Principles of Ethics', 'C003');
+
+
+
 
