@@ -18,6 +18,20 @@ CREATE TABLE  students (
   FOREIGN KEY (course_id) REFERENCES courses(course_id)
   FOREIGN KEY (questionId) REFERENCES questions (question_Id)
   );
+
+CREATE TABLE questions (
+  question_id VARCHAR(5) PRIMARY KEY,
+  course_id VARCHAR(5) NOT NULL,
+  question_text TEXT NOT NULL,
+  optionA VARCHAR(255) NOT NULL,
+  optionB VARCHAR(255) NOT NULL,
+  optionC VARCHAR(255) NOT NULL,
+  optionD VARCHAR(255) NOT NULL,
+  correct_option CHAR(1) NOT NULL CHECK (correct_option IN ('A', 'B', 'C', 'D')),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
 CREATE TABLE  answers (
   answer_id varchar(7) NOT NULL,
   student_id varchar(4) NOT NULL,
