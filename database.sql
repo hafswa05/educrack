@@ -16,6 +16,7 @@ CREATE TABLE  students (
   PRIMARY KEY (student_id),
   UNIQUE KEY email (email),
   FOREIGN KEY (course_id) REFERENCES courses(course_id)
+  FOREIGN KEY (questionId) REFERENCES questions (question_Id)
   );
 CREATE TABLE  answers (
   answer_id varchar(7) NOT NULL,
