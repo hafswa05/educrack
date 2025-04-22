@@ -13,6 +13,18 @@ CREATE TABLE  students (
   password varchar(255) NOT NULL,
   course_Id varchar(5) DEFAULT NULL,
   PRIMARY KEY (student_id),
-  UNIQUE KEY email (email));
+  UNIQUE KEY email (email)
+  );
+CREATE TABLE  answers (
+  answer_id varchar(7) NOT NULL,
+  student_id varchar(4) NOT NULL,
+  question_id varchar(5) NOT NULL,
+  select_option char(1) NOT NULL,
+  iscorrect tinyint(1) NOT NULL,
+  anweredAT datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (answer_id),
+  KEY student_id (student_id),
+  CONSTRAINT `answers_ibfk_1` FOREIGN KEY (student_id) REFERENCES students (student_id)
+) 
 
 
