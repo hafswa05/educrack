@@ -107,11 +107,21 @@ created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (unit_id) REFERENCES units(unit_id),
 FOREIGN KEY (lec_id) REFERENCES lecturers(lec_id)
 );
-insert into 
 INSERT INTO courses (course_id, course_name) VALUES
 ('C001', 'BICS'),
 ('C002', 'BBA'),
 ('C003', 'BBNA');
+
+INSERT INTO lecturers (lec_id, name, email, password) VALUES
+(101, 'Dr. Jane Muthoni', 'j.muthoni@strathmore.edu', 'securehash123'),
+(102, 'Prof. James Omondi', 'j.omondi@strathmore.edu', 'pwdhash456'),
+(103, 'Dr. Susan Kariuki', 's.kariuki@strathmore.edu', 'hashed789');
+
+
+INSERT INTO students (student_id, fullname, email, password, course_id) VALUES
+(191400, 'Ann Wanjiru', 'a.wanjiru@strathmore.edu', 'studentpass1', 'C001'),
+(176342, 'Brian Otieno', 'b.otieno@strathmore.edu', 'studentpass2', 'C002'),
+(180982, 'Christine Akinyi', 'c.akinyi@strathmore.edu', 'studentpass3', 'C001');
 
 INSERT INTO units (unit_id, unit_name, course_id) VALUES
 ('U101', 'Communication Skills', 'C001'),
@@ -122,5 +132,37 @@ INSERT INTO units (unit_id, unit_name, course_id) VALUES
 ('U106', 'Principles of Ethics', 'C003');
 
 
+INSERT INTO questions (question_id, unit_id, question_text, optionA, optionB, optionC, optionD, correct_option, lec_id) VALUES
+(1, 'U102', 'What is the object of the intellect?', 'truth', 'good', 'happiness', 'will', 'A', 101),
+(2, 'U101','Which of these is the most important element of active listening?','Maintaining eye contact','Formulating your response while the speaker is talking','Asking clarifying questions','Nodding occasionally','C',101  
+);
+
+INSERT INTO quizzes (quiz_id, quiz_name, unit_id, lec_id, time_limit, pass_mark) VALUES
+(1, 'Ethics Midterm', 'U102', 101, 45, 50),
+(2, 'Comm Skills CAT', 'U101', 101, 30, 60);
+
+INSERT INTO quiz_questions (quiz_id, question_id) VALUES
+(1, 1), (2, 2);
+
+
+INSERT INTO history (history_id, student_id, quiz_id, score, grade, NumberOfAttempts, UnitStatus) VALUES
+('H001', 191400, 1, 18.50, 'B', 1, 'In Progress'),
+('H002', 176342, 2, 25.00, 'A', 1, 'Completed'),
+('H003', 180982, 1, 22.00, 'A', 2, 'Completed');
+
+
+INSERT INTO answers (answer_id, student_id, question_id, select_option, iscorrect) VALUES
+('ANS001', 191400, 1, 'A', 1),
+('ANS002', 191400, 2, 'C', 1),
+('ANS003', 176342, 1, 'A', 1);
+
+INSERT INTO results (studentId, FName, LName, unit_id, score, grade, comment) VALUES
+(191400, 'Ann', 'Wanjiru', 'U101', 22.00, 'A', 'Excellent performance'),
+(176342, 'Brian', 'Otieno', 'U102', 25.00, 'A', 'Well done');
+
+
+INSERT INTO notes (note_id, unit_id, lec_id, title, content, is_summary) VALUES
+(1, 'U101', 101, 'Database Design', 'Primary keys uniquely identify records...', 1),
+(2, 'U102', 102, 'OOP Principles', 'The four pillars of OOP are...', 1);
 
 
