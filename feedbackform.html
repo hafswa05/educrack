@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>EDUCRACK Feedback Form</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>EDUCRACK Feedback Form</h1>
+
+    <form>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+
+      <label for="rating">Rate your experience</label>
+      <select id="rating" name="rating">
+        <option value="">--Select--</option>
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+      </select>
+
+      <label for="comments">Any suggestions or comments?</label>
+      <textarea id="comments" name="comments" rows="5"></textarea>
+
+      <label>Would you recommend EDUCRACK?</label>
+      <input type="radio" id="yes" name="recommend" value="yes">
+      <label for="yes" style="display:inline;">Yes</label>
+
+      <input type="radio" id="no" name="recommend" value="no">
+      <label for="no" style="display:inline;">No</label>
+
+      <br>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+</body>
+</html>
