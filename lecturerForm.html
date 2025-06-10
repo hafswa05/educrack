@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="quiz-form.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDUCRACK- Quiz Creation Form</title>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>Create a new quiz</h1>
+            <form id="quizForm" action="/submit-quiz" method="POST">
+
+                <div class="form-group">
+                    <label for="quizTitle" class="required">Quiz Title</label>
+                    <input type="text" id="quizTitle" name="quizTitle" required placeholder="Enter quiz title">
+                </div>
+
+                <div class="form-group">
+                    <label for="quizDescription">Description</label>
+                    <textarea id="quizDescription" name="quizDescription" rows="3" placeholder="Optional Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectTag" class="required">Subject</label>
+                    <select id="subjectTag" name="subjectTag" required>
+                        <option value="">--Select Subject--</option>
+                        <option value="communication">Communication Skills</option>
+                        <option value="biology">Biology</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="computer science">Computer Science</option>
+                    </select>
+                </div>
+
+                <h3 class="section-heading">Questions</h3>
+
+                <div class="question-block">
+                    <span class="question-number required">Question 1</span>
+
+                    <div class="form-group">
+                        <label for="question1" class="required">Question text</label>
+                        <input type="text" id="question1" name="question1" required placeholder="Enter the question">
+                    </div>
+
+                    <div class="option-group">
+                        <input type="text" id="q1_option1" name="question1_option1" placeholder="Option 1" required>
+                        <div class="correct-option">
+                            <input type="radio" id="q1_correct1" name="question1_correct" value="1">
+                            <label for="q1_correct1">Mark as Correct</label>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <input type="text" id="q1_option2" name="question1_option2" placeholder="Option 2" required>
+                        <div class="correct-option">
+                            <input type="radio" id="q1_correct2" name="question1_correct" value="2">
+                            <label for="q1_correct2">Mark as Correct</label>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <input type="text" id="q1_option3" name="question1_option3" placeholder="Option 3" required>
+                        <div class="correct-option">
+                            <input type="radio" id="q1_correct3" name="question1_correct" value="3">
+                            <label for="q1_correct3">Mark as Correct</label>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <input type="text" id="q1_option4" name="question1_option4" placeholder="Option 4" required>
+                        <div class="correct-option">
+                            <input type="radio" id="q1_correct4" name="question1_correct" value="4">
+                            <label for="q1_correct4">Mark as Correct</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

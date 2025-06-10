@@ -1,0 +1,166 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Main Container - Matching Login Form Styling */
+.form-container {
+    background: rgb(12, 170, 227);
+    background-color:white ;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.form-group label.required::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #70bce4;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+/* Question Blocks */
+.question-block {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #70bce4;
+}
+
+.question-number {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #70bce4;
+}
+
+/* Option Groups */
+.option-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.option-group input[type="text"] {
+    flex-grow: 1;
+}
+
+.correct-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.correct-option input[type="radio"] {
+    margin: 0;
+}
+
+/* Section Headings */
+.section-heading {
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #70bce4;
+}
+
+/* Buttons - Matching Login Form */
+button[type="submit"] {
+    background-color: #70bce4;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    margin: 2rem auto 0;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #70bce4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .option-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .correct-option {
+        margin-top: 5px;
+        align-self: flex-end;
+    }
+}
