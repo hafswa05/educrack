@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>  Educrack Quiz Scheduling </title>
+    <link rel ="stylesheet" href ="Qsched.css">
+</head>
+    <body>
+        <div class = "container ">
+        <h2> Schedule a quiz </h2>
+        <form>
+        <label for ="quiz_id"> Select Quiz</label>
+        <select name="quiz_id" id ="quiz_id">
+            <option value ="Commskills101"> Communication skills 1</option>
+            <option value ="PA201"> PA 1</option>
+        </select>
+        <label for="start_time">Start Time:</label>
+<input type="datetime-local" id="start_time" name="start_time">
+<label for="duration">Duration (minutes):</label>
+<input type="number" id="duration" name="duration" min="1">
+<label for="target">Assign to:</label>
+<select id="target" name="target_group">
+  <option value="class10a">Class 10A</option>
+  <option value="class11b">Class 11B</option>
+</select>
+<label for="attempts">Number of Attempts:</label>
+<input type="number" id="attempts" name="attempts" value="1" min="1">
+<button type="submit">Schedule Quiz</button>
+        </form>
+        </div>
+
+    </body>
+    </html>

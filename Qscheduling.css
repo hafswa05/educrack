@@ -1,0 +1,79 @@
+/* Style the entire page background and font */
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Simple font */
+    background-color: rgb(96, 185, 230); /* Light gray background */
+    
+    /* Center content horizontally and vertically */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height */
+  }
+  
+  /* Container holds the form and styles the box */
+  .container {
+    background-color:white; /* White background */
+    padding: 22px; /* Space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Light shadow */
+    width: 350px; /* Fixed width */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  /* Heading styles */
+  .container h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below heading */
+    color: #333; /* Dark gray color */
+  }
+  
+  /* Labels appear above input fields */
+  label {
+    display: block; /* Labels on separate lines */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Style for text, email, and password inputs */
+  input[type="datetime-local"],
+  input[type="number"] {
+    width: 100%; /* Make input take full container width */
+    padding: 8px; /* Space inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Size of input text */
+  }
+  
+  /* Change border color when input is focused */
+  input[type="datetime-local"]:focus,
+  input[type = "number"]:focus {
+    border-color: #66afe9; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Space inside button */
+    background-color: #337ab7; /* Blue background */
+    color: white; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Add pointer on hover */
+  }
+  
+  /* Change button color when hovered */
+  button[type="submit"]:hover {
+    background-color: #286090; /* Darker blue when mouse is over */
+  }
+  
+  /* Make the form responsive on very small screens */
+  @media (max-width: 360px) {
+    .container {
+        width: 90%; /* Use most of the screen width */
+        padding: 15px; /* Reduce padding */
+    }
+  }
