@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lecturer Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fb;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    header {
+      background-color: #0000ff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .profile {
+      position: relative;
+    }
+
+    .profile-name {
+      background: #ffffff22;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .profile-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background-color: white;
+      color: #000;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .profile-dropdown a {
+      display: block;
+      padding: 10px 15px;
+      color: #0000ff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .profile-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .profile:hover .profile-dropdown {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #0000ff;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #0000ff;
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 380px;
+      flex: 1 1 300px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #0000cc;
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 255, 0.4);
+    }
+
+    .card h3 {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #f0f0f0;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #0000ff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #e6e6e6;
+      color: #0000cc;
+    }
+  </style>
+  <script>
+    function toggleNav() {
+      const nav = document.querySelector("nav");
+      nav.classList.toggle("show");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Lecturer Panel</div>
+    <div class="hamburger" onclick="toggleNav()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav>
+      <a href="view_units.php">Units</a>
+      <a href="add_question.php">Add Quiz</a>
+      <a href="analytics.php">Performance</a>
+      <a href="edit_question.php">Edit Quiz</a>
+    </nav>
+    
+    <div class="profile">
+      <span class="profile-name">
+        <?php 
+        session_start(); echo $_SESSION['name'] ?? 'Lecturer'; ?> 
+      </span>
+      <div class="profile-dropdown">
+        <a href="profile.php">View Profile</a>
+        <a href="edit_profile.php">Edit Details</a>
+        <a href="logout.php">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>My Units</h3>
+      <p>Manage all your active course units.</p>
+      <a href="view_units.php" class="button">View Units</a>
+    </div>
+
+    <div class="card">
+      <h3>Quiz Builder</h3>
+      <p>Create new quiz questions or edit existing ones.</p>
+      <a href="add_question.php" class="button">Build Quiz</a>
+    </div>
+
+    <div class="card">
+      <h3>Performance Analysis</h3>
+      <p>Analyze how students are performing in your quizzes.</p>
+      <a href="analytics.php" class="button">View Analytics</a>
+    </div>
+
+    <div class="card">
+      <h3>Edit Quiz</h3>
+      <p>Update or delete questions from your quizzes.</p>
+      <a href="edit_question.php" class="button">Edit Quiz</a>
+    </div>
+
+    <div class="card">
+      <h3>Upload Notes</h3>
+      <p>Share summaries and class material with your students.</p>
+      <a href="upload_notes.php" class="button">Upload Notes</a>
+    </div>
+
+    <div class="card">
+      <h3>View Notes</h3>
+      <p>Access and manage notes linked to your units.</p>
+      <a href="view_notes.php" class="button">View Notes</a>
+    </div>
+
+  </div>
+</body>
+</html>
