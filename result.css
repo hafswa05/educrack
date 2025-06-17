@@ -1,0 +1,89 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f6fc;
+  color: #333;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+/* Page headings */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0c3c78;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #1d3557;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #2a5298;
+  border-bottom: 2px solid #d3e3fd;
+  padding-bottom: 5px;
+}
+
+/* Summary box */
+div > p {
+  font-size: 1rem;
+  margin: 6px 0;
+}
+
+/* Answer details */
+div > div {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Correct / incorrect indicator */
+p:last-of-type {
+  font-weight: bold;
+}
+
+p:last-of-type:contains("Correct") {
+  color: green;
+}
+
+p:last-of-type:contains("Incorrect") {
+  color: red;
+}
+
+/* Horizontal line between answers */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 15px 0;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2, h3 {
+    font-size: 1rem;
+  }
+}
