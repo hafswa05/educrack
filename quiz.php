@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "educrack";
+$dbname = "educrack"  ;
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -42,7 +42,7 @@ $conn->close();
 <p2 class="Para" id="ba"><?php echo ($index + 1) . ". " . $question['question_text']; ?></p2><br><br>
 </div>
 <div>
-<input type="radio" id="q<?php echo $question['question_id']; ?>a" name="question_<?php echo $question['question_id']; ?>" value="A">
+<input type="radio" id="q<?php echo $question['question_id']; ?> a" name="question_<?php echo $question['question_id']; ?>" value="A">
 <label for="q<?php echo $question['question_id']; ?>a"><span>A</span> <?php echo $question['optionA']; ?></label><br>
 
 <input type="radio" id="q<?php echo $question['question_id']; ?>b" name="question_<?php echo $question['question_id']; ?>" value="B">
@@ -54,7 +54,7 @@ $conn->close();
 <input type="radio" id="q<?php echo $question['question_id']; ?>d" name="question_<?php echo $question['question_id']; ?>" value="D">
 <label for="q<?php echo $question['question_id']; ?>d"><span>D</span> <?php echo $question['optionD']; ?></label><br><br>
 </div>
-<?php endforeach; ?>
+<?php endforeach ; ?>
 
 <button type="submit" class="11">Submit Quiz</button>
 </form>
